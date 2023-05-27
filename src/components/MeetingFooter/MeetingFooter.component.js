@@ -16,8 +16,6 @@ import ReactTooltip from "react-tooltip";
 import "./MeetingFooter.css";
 const MeetingFooter = (props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [IsThumbsUpClicked,setIsThumbsUpClicked] = useState(false)
-  const [showThumbsUpIcon, setShowThumbsUpIcon] = useState(false);
   
   const [streamState, setStreamState] = useState({
     mic: true,
@@ -57,11 +55,6 @@ const MeetingFooter = (props) => {
     
   };
   const onThumbsUpClick = () => {
-    setIsThumbsUpClicked(prevState => !prevState);
-    setShowThumbsUpIcon(true);
-    setTimeout(() => {
-      setShowThumbsUpIcon(false);
-    }, 10000);
     setStreamState((currentState) => {
       return {
         ...currentState,
@@ -152,7 +145,7 @@ const MeetingFooter = (props) => {
           <div
            className={"emojis-icons " + (streamState.thumbs_up ? "active-emojis" : "")}
            onClick={onThumbsUpClick} title="ThumpsUp">
-          <FontAwesomeIcon icon={!IsThumbsUpClicked ? faThumbsUp : faThumbsUp}/>
+          <FontAwesomeIcon icon={faThumbsUp}/>
           </div>
           <div
           className={"emojis-icons " + (streamState.thumbs_down ? "active-emojis" : "")}
@@ -169,11 +162,6 @@ const MeetingFooter = (props) => {
           onClick={onDisagreeClick}>
             <FontAwesomeIcon icon={faExclamation} title="DisAgree" />
             </div>
-        </div>
-      )}
-      {showThumbsUpIcon && (
-        <div className="thumbs-up-icon">
-          <FontAwesomeIcon icon={faThumbsUp} />
         </div>
       )}
     </div>
