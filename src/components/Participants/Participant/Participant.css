@@ -66,6 +66,14 @@
     position: absolute;
     left: 20px;
   }
+  .thumbs-up-icon{
+    position: relative;
+    z-index: 9999;
+    color: white;
+    margin-bottom: 230px;
+    margin-left: 540px;
+    font-size: 100px;
+  }
 
   @media (max-width: 800px) {
     .participant{

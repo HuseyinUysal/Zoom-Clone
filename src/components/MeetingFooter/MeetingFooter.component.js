@@ -27,6 +27,7 @@ const MeetingFooter = (props) => {
     disagree:false,
     emojis:false,
   });
+
   const micClick = () => {
     setStreamState((currentState) => {
       return {
@@ -102,6 +103,15 @@ const MeetingFooter = (props) => {
   useEffect(() => {
     props.onMicClick(streamState.mic);
   }, [streamState.mic]);
+
+  useEffect(() => {
+    if (streamState) {
+      const {agree,disagree,thumbs_down,thumbs_up} = streamState
+      props.onEmojisClick({agree,disagree,thumbs_down,thumbs_up});
+    }
+  
+  }, [streamState.agree ,streamState.disagree,streamState.thumbs_down,streamState.thumbs_up]);
+
   useEffect(() => {
     props.onVideoClick(streamState.video);
   }, [streamState.video]);
@@ -145,7 +155,7 @@ const MeetingFooter = (props) => {
           <div
            className={"emojis-icons " + (streamState.thumbs_up ? "active-emojis" : "")}
            onClick={onThumbsUpClick} title="ThumpsUp">
-          <FontAwesomeIcon icon={faThumbsUp}/>
+          <FontAwesomeIcon icon={ faThumbsUp }/>
           </div>
           <div
           className={"emojis-icons " + (streamState.thumbs_down ? "active-emojis" : "")}
@@ -164,6 +174,7 @@ const MeetingFooter = (props) => {
             </div>
         </div>
       )}
+     
     </div>
   );
 };

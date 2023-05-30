@@ -5,7 +5,6 @@ import "./MainScreen.css";
 import { connect } from "react-redux";
 import { setMainStream, updateUser } from "../../store/actioncreator";
 
-  
 
 const MainScreen = (props) => {
   const participantRef = useRef(props.participants);
@@ -74,7 +73,19 @@ const MainScreen = (props) => {
 
     props.updateUser({ screen: true });
   };
-  
+
+  const onEmojisClick = async (emojis) => {
+    if (props.stream) {
+     props.updateUser({
+      thumbs_up: emojis.thumbs_up,
+      thumbs_down:emojis.thumbs_down,
+      agree:emojis.agree,
+      disagree: emojis.disagree
+      });
+    }
+   
+  }
+
   return (
     
     <div className="wrapper">
@@ -87,8 +98,8 @@ const MainScreen = (props) => {
       </div>
 
       <div className="footer">
-        
         <MeetingFooter
+          onEmojisClick = {onEmojisClick}
           onScreenClick={onScreenClick}
           onMicClick={onMicClick}
           onVideoClick={onVideoClick}

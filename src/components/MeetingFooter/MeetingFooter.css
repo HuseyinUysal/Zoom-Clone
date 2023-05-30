@@ -54,8 +54,3 @@ div[disabled]
   pointer-events: none;
   opacity: 0.3;
 }
-.thumbs-up-icon{
-  position: relative;
-  z-index: 9999;
-  color: red;
-}
