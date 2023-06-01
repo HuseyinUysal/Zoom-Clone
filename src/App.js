@@ -20,6 +20,7 @@ function App(props) {
 
     return localStream;
   };
+  // eslint-disable-next-line
   useEffect(async () => {
     const stream = await getUserStream();
     stream.getVideoTracks()[0].enabled = false;
@@ -42,6 +43,7 @@ function App(props) {
         userStatusRef.onDisconnect().remove();
       }
     });
+    // eslint-disable-next-line
   }, []);
 
   const connectedRef = db.database().ref(".info/connected");
@@ -75,6 +77,7 @@ function App(props) {
         props.removeParticipant(snap.key);
       });
     }
+    // eslint-disable-next-line
   }, [isStreamSet, isUserSet]);
 
   return (

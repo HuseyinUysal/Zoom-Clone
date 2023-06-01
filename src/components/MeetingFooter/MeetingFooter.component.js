@@ -102,18 +102,20 @@ const MeetingFooter = (props) => {
   };
   useEffect(() => {
     props.onMicClick(streamState.mic);
+    // eslint-disable-next-line
   }, [streamState.mic]);
-
+  
   useEffect(() => {
     if (streamState) {
       const {agree,disagree,thumbs_down,thumbs_up} = streamState
       props.onEmojisClick({agree,disagree,thumbs_down,thumbs_up});
     }
-  
+  // eslint-disable-next-line
   }, [streamState.agree ,streamState.disagree,streamState.thumbs_down,streamState.thumbs_up]);
-
+  
   useEffect(() => {
     props.onVideoClick(streamState.video);
+    // eslint-disable-next-line
   }, [streamState.video]);
 
   return (
