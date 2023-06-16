@@ -1,14 +1,13 @@
 import firebase from "firebase";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyB3eVGyqPMDCjqX8FNG4Z35E73Yp2XsCos",
-  authDomain: "meet-clonee.firebaseapp.com",
-  databaseURL: "https://meet-clonee-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "meet-clonee",
-  storageBucket: "meet-clonee.appspot.com",
-  messagingSenderId: "510717745367",
-  appId: "1:510717745367:web:41d8cc3b39498ed2e6f892",
-  measurementId: "G-PW24Y210L7"
+  apiKey: "AIzaSyBQQOrsTLc-6nrtQA2zokSLMhfK8aWuRTM",
+  authDomain: "bitirme-594ec.firebaseapp.com",
+  databaseURL: "https://bitirme-594ec-default-rtdb.firebaseio.com",
+  projectId: "bitirme-594ec",
+  storageBucket: "bitirme-594ec.appspot.com",
+  messagingSenderId: "15290306947",
+  appId: "1:15290306947:web:1cbe2e68c67f1a7cb826b6"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
